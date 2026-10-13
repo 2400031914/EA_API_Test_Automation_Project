@@ -1,0 +1,26 @@
+[
+  {
+    "id": "TC-001",
+    "endpoint": "/health",
+    "method": "GET",
+    "scenario": "Health endpoint responds when service is available",
+    "expected_status": 200,
+    "expected_result": "Response body contains status=ok"
+  },
+  {
+    "id": "TC-002",
+    "endpoint": "/users/999",
+    "method": "GET",
+    "scenario": "Unknown user ID returns a not-found response",
+    "expected_status": 404,
+    "expected_result": "Response body contains error=user_not_found"
+  },
+  {
+    "id": "TC-003",
+    "endpoint": "/users",
+    "method": "POST",
+    "scenario": "Create user rejects malformed email",
+    "expected_status": 400,
+    "expected_result": "Response body contains an invalid_email error"
+  }
+]
